@@ -1,0 +1,20 @@
+{
+  "name": "open-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:chromium": "npx playwright test --config=playwright.config.ts --project=Chromium --reporter=list",
+    "test:firefox": "npx playwright test --config=playwright.config.ts --project=Firefox --reporter=list",
+    "test:webkit": "npx playwright test --config=playwright.config.ts --project=Webkit --reporter=list",
+    "test:e2e": "npx playwright test --config=playwright.config.ts --project=chromium --reporter=list"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.36.2",
+    "prettier": "^3.0.1"
+  }
+}
