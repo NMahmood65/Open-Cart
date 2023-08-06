@@ -8,7 +8,9 @@
     "test:chromium": "npx playwright test --config=playwright.config.ts --project=Chromium --reporter=list",
     "test:firefox": "npx playwright test --config=playwright.config.ts --project=Firefox --reporter=list",
     "test:webkit": "npx playwright test --config=playwright.config.ts --project=Webkit --reporter=list",
-    "test:e2e": "npx playwright test --config=playwright.config.ts --project=chromium --reporter=list"
+    "test:e2e": "npx playwright test --config=playwright.config.ts --project=chromium --reporter=list",
+    "test:visual": "npx playwright test --config=visual.config.ts --project=chromium --reporter=list",
+    "test:api": "npx playwright test --config=api.config.ts --project=chromium --reporter=list"
   },
   "keywords": [],
   "author": "",

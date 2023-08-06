@@ -12,9 +12,7 @@ test.only('test', async ({ page }) => {
   await page.getByRole('button', { name: ' 1 item(s) - $98.00' }).click();
   await page.getByRole('button', { name: '' }).click();
   await page.getByRole('button', { name: ' 0 item(s) - $0.00' }).click();
-  //await page.pause()
-  // const checkempty = await page.getByText('Your shopping cart is empty!')
-  // await expect(checkempty).toBeVisible()
-  // await page.screenshot({path:'screenshots/emptycart.png'})
-  // Test
+  const checkempty = page.getByText('Your shopping cart is empty!')
+  await expect(checkempty).toBeVisible()
+  await page.screenshot({path:'screenshots/emptycart.png'})
 });

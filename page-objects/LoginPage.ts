@@ -18,6 +18,7 @@ export class LoginPage {
         this.submitButton = page.getByRole('button', { name: 'Login' })
         this.errorMessage = page.getByText('Warning: No match for E-Mail Address and/or Password.')
         this.SuccessfulLogin = page.locator('#content').getByRole('heading', { name: 'My Account' })
+        this.loginForm = page.locator('#content')
     }
 
     async login(username: string, password: string) {
@@ -30,19 +31,19 @@ export class LoginPage {
     }
 
     async assertErrorMessage() {
-        await expect(this.errorMessage).toBeVisible()
+        await expect(await this.errorMessage).toBeVisible()
     }
 
     async assertSuccessLogin() {
-        await expect(this.SuccessfulLogin).toContainText('My Account')
+        await expect(await this.SuccessfulLogin).toContainText('My Account')
     }
 
-    // async snapshotLoginForm() {
-    //     const loginForm = await this.submitButton.click()
-    //     await expect(this.loginForm.screenshot()).toMatchSnapshot('login-form.png')
-    // }
+    async snapshotLoginForm() {
+        //const loginForm = await this.submitButton.click()
+        await expect(await this.loginForm.screenshot()).toMatchSnapshot('login-form.png')
+    }
 
-    // async snapshotErrorMessage() {
-    //     await expect(this.errorMessage.screenshot()).toMatchSnapshot('login-error.png')
-    // }
+    async snapshotErrorMessage() {
+        await expect(await this.errorMessage.screenshot()).toMatchSnapshot('login-error.png')
+    }
 }

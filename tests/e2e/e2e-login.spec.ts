@@ -75,10 +75,5 @@ test.describe('testing all login combinations', () => {
         //await page.pause()
         await loginPage.assertSuccessLogin()
     })
-
-    
-
-    
-     
-    
+   
 })
