@@ -4,11 +4,13 @@ export class HomePage {
     readonly page: Page
     readonly signInButton: Locator
     readonly searchItem: Locator
+    readonly successfulRegister:Locator
     
     constructor(page: Page) {
         this.page = page
         this.signInButton = page.getByRole('link', { name: ' My Account' })
         this.searchItem = page.getByRole('textbox', { name: 'Search For Products' })
+        this.successfulRegister = page.getByText('Congratulations! Your new account has been successfully created!')
     }
 
     async visit() {
@@ -21,9 +23,7 @@ export class HomePage {
         //await this.page.pause()
     }
 
-    async searchFor(phrase: string) {
-        await this.searchItem.click()
-        await this.searchItem.fill(phrase)
-        await this.page.keyboard.press('Enter')
+    async assertSuccessRegister() {
+        await expect(this.successfulRegister).toBeVisible()
     }
 }

@@ -9,7 +9,7 @@ test.describe('search results', () => {
         await page.getByRole('textbox', { name: 'Search For Products' }).click();
         await page.getByRole('textbox', { name: 'Search For Products' }).fill('iphone');
         await page.getByRole('button', { name: 'Search' }).click();
-        const searchTitle = await page.getByRole('heading', { name: 'Search - iphone' })
+        const searchTitle = page.getByRole('heading', { name: 'Search - iphone' })
         //await page.pause()
         await expect(searchTitle).toBeVisible()
         //await page.pause()

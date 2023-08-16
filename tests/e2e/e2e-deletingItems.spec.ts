@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.only('test', async ({ page }) => {
-    await page.goto('http://opencart.abstracta.us/index.php?route=common/home');
+test('delete items', async ({ page }) => {
+  await page.goto('http://opencart.abstracta.us/index.php?route=common/home');
   await page.getByRole('link', { name: 'Tablets' }).click();
   await page.getByRole('button', { name: ' Add to Cart' }).click();
   await page.getByRole('link', { name: 'Software', exact: true }).click();
