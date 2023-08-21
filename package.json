@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@playwright/test": "^1.36.2",
+    "fast-csv": "^4.3.6",
     "prettier": "^3.0.1"
   },
   "devDependencies": {
